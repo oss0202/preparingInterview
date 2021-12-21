@@ -8,10 +8,29 @@
 - 대표적으로 ORM기술인 하이버네이트, jackson라이브러리 등에 사용됩니다.
 
 ###Exception 이란?
+- 예외(Exception) : 정상적인 프로그램의 흐름에 어긋나는 것
+- 에러(Error) : 시스템에 무엇인가 비정상적인 상황이 발생하는 경우
+  - ex. OutOfMemory, StackOverflowError, ...
 
 ###Exception 종류
+  |구분|Checked Exception|Unchecked Exception|
+  |:------:|:---|:---|
+  |확인 시점|**컴파일(Compile)** 시점|**런타임(Runtime)** 시점|
+  |처리 여부|반드시 예외 처리|명시적으로 안해도 됨|
+  |트랜잭션 처리|**예외 발생시 롤백(rollback)X**|**예외 발생 시 롤백**|
+  |종류|IOException, ClassNotFoundException|NullPointException, ClassCastException 등|
 
 ###Checked Exception rollback 방법
+- try~catch
+- Transactional의 rollbackFor 옵션 사용
+- 컴파일 단계에서 체크
+- jdbcTemplate 
+
+###Exception을 만들어서 사용해본적?
+- Filter
+  - Post나 Put일 때 Body가 비었을 때 발생(custom Exception)
+  - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
+
 
 ###Stream 이란?
 
