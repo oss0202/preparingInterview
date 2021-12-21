@@ -1,4 +1,4 @@
-###Java Generic 이란?
+### Java Generic 이란?
 - 클래스 내부에 사용할 데이터 타입을 인스턴스 생성 시에 결정하는 방식입니다.
 - 컴파일할 때 타입체크를해서 사전에 에러를 잡을 수 있다.
 - 코드의 재사용성이 좋아진다.
@@ -26,21 +26,21 @@
 - 컴파일 단계에서 체크
 - jdbcTemplate 
 
-###Exception을 만들어서 사용해본적?
+### Exception을 만들어서 사용해본적?
 - Filter
   - Post나 Put일 때 Body가 비었을 때 발생(custom Exception)
   - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
 
 
-###Stream 이란?
+### Stream 이란?
 
-###Stream 장단점
+### Stream 장단점
 
-###Steam 구성
+### Steam 구성
 
-###Entity equals 메소드 재정의 기준(해시코드 오버라이드)
+### Entity equals 메소드 재정의 기준(해시코드 오버라이드)
 
-###HashMap에서 충돌(collision)을 회피하기 위한 방법은?
+### HashMap에서 충돌(collision)을 회피하기 위한 방법은?
 
-###jvm의 종류
+### jvm의 종류
 
