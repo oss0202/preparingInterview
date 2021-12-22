@@ -53,10 +53,16 @@
   - 연산 : sum(), average()
   - 수집 : collect()
 
+### equals를 재정의한 클래스에서는 hashcode도 재정의 해야한다 그 이유는?
+- hashcode를 재정의 하지 않으면 hash를 사용하는 HashMap, HashSet과 같은 컬렉션의 원소로 사용될 때 문제가 발생할 것이다.
+
 ### HashMap에서 충돌(collision)을 회피하기 위한 방법은?
-- equals를 재정의한 클래스에서는 hashcode도 재정의 해야한다.
-  - hashcode를 재정의 하지 않으면 hash를 사용하는 HashMap, HashSet과 같은 컬렉션의 원소로 사용될 때 문제가 발생할 것이다.
-
-
-### jvm의 종류
+- Open Addressing
+  - 충돌이 발생하면 다른 해시버킷에 해당 자료를 삽입
+- Separate Chaining
+  - 충돌 시 해당 버킷값을 첫 부분으로 하는 링크드 리스트로 해결
+  
+### Garbage Collection의 종류
+- GC : Java Runtime시 Heap 영역에 저장되는 객체들은 따로 정리하지 않으면 OutOfMemory Exception이 발생할 수 있다.
+이를 방지하기 위하여 JVM에서는 주기적으로 사용하지 않는 객체를 수집하여 정리하는 GC를 진행한다.
 
