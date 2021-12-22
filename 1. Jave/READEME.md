@@ -32,14 +32,31 @@
   - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
   
 ### Stream 이란?
-
-### Stream 장단점
+- 배열 또는 컬렉션 인스턴스에 함수 여러 개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다.
+- 병렬처리(multi-threading)가능 (하나의 작업을 둘 이상의 작업으로 잘게 나눠서 동시에 진행)
 
 ### Steam 구성
-
-### Entity equals 메소드 재정의 기준(해시코드 오버라이드)
+- 생성하기 : 스트림 인스턴스 생성
+  - 컬랙션 : 컬랙션.stream();
+  - 배열 : Arrays.stream(배열)
+- 가공하기 : filtering, mapping 등 원하는 결과를 만들어가는 중간작업
+  - 필터링 : filter(), distinct()
+  - 변환 : map(), flatMap()
+  - 제한 : limit(), skip()
+  - 정렬 : sorted()
+  - 연산 결과 확인 : peek()
+- 결과 만들기 : 최종적으로 결과를 만들어내는 작업
+  - 출럭 : foreach()
+  - 소모 : reduce()
+  - 검색 : findFirst(), findAny()
+  - 통계 : count(), min(), max()
+  - 연산 : sum(), average()
+  - 수집 : collect()
 
 ### HashMap에서 충돌(collision)을 회피하기 위한 방법은?
+- equals를 재정의한 클래스에서는 hashcode도 재정의 해야한다.
+  - hashcode를 재정의 하지 않으면 hash를 사용하는 HashMap, HashSet과 같은 컬렉션의 원소로 사용될 때 문제가 발생할 것이다.
+
 
 ### jvm의 종류
 
