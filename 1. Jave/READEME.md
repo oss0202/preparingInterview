@@ -24,14 +24,13 @@
 - try~catch
 - Transactional의 rollbackFor 옵션 사용
 - 컴파일 단계에서 체크
-- jdbcTemplate 
+- Spring에서는 jdbcTemplate에서 unChecked Exception으로 포장해서 리턴해줘서 rollback 된다. 
 
 ### Exception을 만들어서 사용해본적?
 - Filter
   - Post나 Put일 때 Body가 비었을 때 발생(custom Exception)
   - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
-
-
+  
 ### Stream 이란?
 
 ### Stream 장단점
