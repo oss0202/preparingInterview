@@ -66,5 +66,22 @@
 - @Test(4,5) : 클래스의 테스트 케이스
 <br>![junit](../img/junit.img) 
 
+### ORM ( Object-relational mapping ) - JPA( Java Persistent API )
+- 객체와 관계형 데이터베이스의 데이터를 자동으로 연결해주는 개념이다.
+- 객체 간의 관계를 바탕으로 SQL을 자동으로 생성해준다.
+- 장점
+  - 프로그래머가 로직에 더 집중할 수있다.
+  - 가독성 및 유지보수의 평리성 증가
+  - DBMSS에 종속적이지 않다. 
+- 단점
+  - ORM으로만 서비스를 구현하기 어렵다.
+  - 프로시저가 많을 경우 ORM을 활용하기 어렵다.
 
-- ORM Mybatis, JPA 장단점
+### SQL Mapper - Mybatis
+- java와 SQL사이의 자동 매핑을 지원한다.
+- 장점
+  - 복잡한 쿼리 작성 가능
+- 단점
+  - 비슷한 쿼리 남발
+
+
