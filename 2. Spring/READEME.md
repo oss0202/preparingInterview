@@ -64,7 +64,7 @@
 - @BeforeClass(4), @BeforeAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 전에 실행
 - @AfterClass(4), @AfterAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 후 실행
 - @Test(4,5) : 클래스의 테스트 케이스
-![](C:\dev_enp\workspace\preparingInterview\img\junit.img) 
+<br>![junit](./img/junit.img) 
 
 
 - ORM Mybatis, JPA 장단점
