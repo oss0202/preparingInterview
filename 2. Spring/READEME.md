@@ -48,11 +48,23 @@
   - 과거 Spring framework에서는 각각의 dependency들의 호환되는 버전을 일일이 맞추어야 했지만 starter가 대부분의 dependecny를 관리해주기 때문에 편해졌다.
 - XML 설정을 하지 않아도 된다.
 
+### Filter, Interceptor
+  |대상|필터(Filter)|인터셉터(Interceptor|
+  |:------:|:---|:---|
+  |실행시점 | DispatcherServlet 이전, 이후 | DispatcherServlet이 컨트롤러 호출하기 전, 후|
+  |용도|- 보안 관련 공통작업<br>- 모든 요청에 대한 로깅 또는 감사|- 인증/인가 등과 같은 공통 작업<br>- Controller로 넘겨주는 정보의 가공|
 
-- was 트래픽 분산방법
+### JUnit을 왜 사용하는가?
+- 코드의 신뢰성을 높히고 빠르고 쉽게 구현
+- 변경에 대한 과거 비즈니스로직 대한 검증
 
-- JUnit을 왜 사용하는가?
+### JUnit4, 5 실행 순서
+- @Before(4), @BeforeEach(5) : 테스트 클래시의 각 테스트 메서드 실행 전 실행
+- @After(4), @AfterEach(5) : 테스트 클래시의 각 테스트 메서드 실행 후 실행
+- @BeforeClass(4), @BeforeAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 전에 실행
+- @AfterClass(4), @AfterAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 후 실행
+- @Test(4,5) : 클래스의 테스트 케이스
+![](C:\dev_enp\workspace\preparingInterview\img\junit.img) 
 
-- JUnit4, 5 실행 순서
 
 - ORM Mybatis, JPA 장단점
