@@ -1,15 +1,15 @@
 ### REST ( REpresentational State Transfer ) 
 - 분산 하이퍼미디어 시스템(ex. Web)을 위한 아키텍쳐 스타일
 - 아키텍쳐 스타일 : 제약조건들의 집합
-  - client-server
-  - stateless
-  - cache
-  - **uniform interface**
+  - Client-server
+  - Stateless
+  - Cacheable
+  - **Uniform interface**(인터페이스 일관성)
     - 아래 2가지를 잘 만족을 하지 못한다.
     - Self-descriptive message : 메세지 스스로 설명이 가능해야 한다.
     - HATEOAS : 링크를 통해 애플리케이션 상태 변화가 가능해야 한다.
-  - layered system
-  - code-on-demand(optional) : javascript
+  - Layered system(계층화)
+  - Code-on-demand(optional) : javascript
 - 필요한 이유
   - 멀티 플랫폼(WEB 브라우저 이외의)에 대한 지원을 위해서 
 
