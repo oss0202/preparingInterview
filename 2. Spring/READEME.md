@@ -54,18 +54,6 @@
   |실행시점 | DispatcherServlet 이전, 이후 | DispatcherServlet이 컨트롤러 호출하기 전, 후|
   |용도|- 보안 관련 공통작업<br>- 모든 요청에 대한 로깅 또는 감사|- 인증/인가 등과 같은 공통 작업<br>- Controller로 넘겨주는 정보의 가공|
 
-### JUnit을 왜 사용하는가?
-- 코드의 신뢰성을 높히고 빠르고 쉽게 구현
-- 변경에 대한 과거 비즈니스로직 대한 검증
-
-### JUnit4, 5 실행 순서
-- @Before(4), @BeforeEach(5) : 테스트 클래시의 각 테스트 메서드 실행 전 실행
-- @After(4), @AfterEach(5) : 테스트 클래시의 각 테스트 메서드 실행 후 실행
-- @BeforeClass(4), @BeforeAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 전에 실행
-- @AfterClass(4), @AfterAll(5) : 테스트 클래스의 모든 테스트 메서드가 실행 후 실행
-- @Test(4,5) : 클래스의 테스트 케이스
-<br>![junit](../img/junit.img) 
-
 ### ORM ( Object-relational mapping ) - JPA( Java Persistent API )
 - 객체와 관계형 데이터베이스의 데이터를 자동으로 연결해주는 개념이다.
 - 객체 간의 관계를 바탕으로 SQL을 자동으로 생성해준다.
