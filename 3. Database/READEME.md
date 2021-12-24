@@ -39,7 +39,7 @@
 - 인덱스가 안 되는 쿼리
   - 컬럼을 가공
     - ex. WHERE SUBSTR(ORDER_NO, 1,4) = ‘2021’ -> WHERE ORDER_NO LIKE ‘2021%’
-  - 인덱스 컬럼의 묵시정 형변환(같은 타입으로 비교해야함)
+  - 인덱스 컬럼의 묵시적 형변환(같은 타입으로 비교해야함)
     - ex) WHERE REG_DATE = ‘20211224’ -> WHERE REG_DATE = TO_DATE(‘20211124’, ‘YYYYMMDD’)
   - 인덕스 컬럼 부정형 비교
     - ex) WHERE MEM_TYPE != ‘10’ -> WHERE MEM_TYPE IN(‘20’, ‘30’)
