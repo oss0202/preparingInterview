@@ -49,7 +49,7 @@
 - XML 설정을 하지 않아도 된다.
 
 ### Filter, Interceptor
-  |대상|필터(Filter)|인터셉터(Interceptor|
+  |대상|필터(Filter)|인터셉터(Interceptor)|
   |:------:|:---|:---|
   |실행시점 | DispatcherServlet 이전, 이후 | DispatcherServlet이 컨트롤러 호출하기 전, 후|
   |용도|- 보안 관련 공통작업<br>- 모든 요청에 대한 로깅 또는 감사|- 인증/인가 등과 같은 공통 작업<br>- Controller로 넘겨주는 정보의 가공|
