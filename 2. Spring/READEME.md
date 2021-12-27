@@ -43,7 +43,7 @@
   - 주입받는 객체가 변경될 가능성이 있다.
   
 ### Spring, Spring Boot 차이점
-- Spring Boot는 Embed Tomcat을 사용하기 때문에 따로 Tomcat을 설치하거나 매번 버전을 관리안해도 된다.
+- Spring Boot는 embedded Tomcat을 사용하기 때문에 따로 Tomcat을 설치하거나 매번 버전을 관리안해도 된다.
 - stater를 통한 dependency 자동화
   - 과거 Spring framework에서는 각각의 dependency들의 호환되는 버전을 일일이 맞추어야 했지만 starter가 대부분의 dependecny를 관리해주기 때문에 편해졌다.
 - XML 설정을 하지 않아도 된다.
