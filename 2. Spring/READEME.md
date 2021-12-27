@@ -21,7 +21,7 @@
 - 여러 모듈에서 공통적으로 사용하는 기능 및 로직들을 모듈화하는 프로그래밍 패러다임
 
 ### PSA란?
-- Portable Service Abstracion
+- Portable Service Abstraction
 - 환경과 세부 기술의 변화에 관계없이 일관된 방식으로 기술에 접근할 수 있게 해주는 것(JDBC, JPA, Transaction Manager, ...)
 
 ### IoC Container란?
