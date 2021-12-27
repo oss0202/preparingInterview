@@ -18,7 +18,7 @@
 
 ### AOP란?
 - Aspect Oriented Programming
-- 여러 모듈에서 공통적으로 사용하는 기능 및 로직들을 분리하여 관리함을 통해서 모듈화하는 프로그래밍 패러다임
+- 여러 모듈에서 공통적으로 사용하는 기능 및 로직들을 모듈화하는 프로그래밍 패러다임
 
 ### PSA란?
 - Portable Service Abstracion

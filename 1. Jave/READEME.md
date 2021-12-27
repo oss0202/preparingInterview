@@ -49,7 +49,7 @@
   |:------:|:---|:---|
   |확인 시점|**컴파일(Compile)** 시점|**런타임(Runtime)** 시점|
   |처리 여부|반드시 예외 처리|명시적으로 안해도 됨|
-  |트랜잭션 처리|**예외 발생시 롤백(rollback)X**|**예외 발생 시 롤백**|
+  |트랜잭션 처리|**예외 발생시 롤백X**|**예외 발생 시 롤백**|
   |종류|IOException, ClassNotFoundException|NullPointException, ClassCastException 등|
 
 ### Checked Exception rollback 방법
