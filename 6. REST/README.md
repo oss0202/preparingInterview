@@ -1,18 +1,18 @@
 ### REST ( REpresentational State Transfer ) 
 - 자원을 이름으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다.
-- 개념
+- **개념**
   - HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, 
 HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다.
-- 장점
+- **장점**
   - HTTP 프로토콜의 인프라를 그대로 사용하므로 별도의 인프라 구축이 필요없다.
   - 서버와 클라이언트의 역할을 명확하게 분리한다.
-- 단점
+- **단점**
   - 표준이 존재하지 않는다.
   - 사용할 수 있는 메소드가 4가지 밖에 없다.(HTTP Method 제한적)
   - 구형 브라우저가 아직 제대로 지원해주지 못하는 부분이 존재한다.(PUT, DELETE)
-- 필요한 이유
+- **필요한 이유**
   - 멀티 플랫폼에 대한 지원을 위해서
-- 아키텍쳐 스타일 : 제약조건들의 집합
+- **아키텍쳐 스타일** : 제약조건들의 집합
   - Client-server
   - Stateless
   - Cacheable
