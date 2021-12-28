@@ -51,4 +51,4 @@ HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Opera
 
 ### RESTful
 - REST 아키텍처를 구현하는 웹서비스를 나타내는 용어이다.
-- RESTful API의 목적은 성능 향상에 있는 것이 아니라 일관적인 컨벤션을 통한 API의 이해도 및 호환성을 높이는 것이다.
+- **RESTful API의 목적은 성능 향상에 있는 것이 아니라 일관적인 컨벤션을 통한 API의 이해도 및 호환성을 높이는 것이다.**
