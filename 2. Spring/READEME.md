@@ -72,4 +72,17 @@
 - 단점
   - 비슷한 쿼리 남발
 
+### 대표적인 스프링 디자인패턴
+- Adapter Pattern
+  - 대표적으로 JDBC가 어뎁터 패턴을 이용해서 다양한 데이터베이스 시스템을 단일한 인터페이스로 조작할 수 있게 해준다.
+  - OCP와 DIP가 활용된 설계 패턴이다.
+- Proxy Pattern
+- Decorator Pattern
+- Singleton Pattern
+- Template Method Pattern
+- Factory Method Pattern
+- Strategy Pattern
+- Template callback Pattern
+
+
 
