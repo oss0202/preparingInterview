@@ -46,7 +46,7 @@
 ![spring_mvc_exec_ord](../img/spring_mvc_exec_ord.img)
 
 |구성요소 이름|설명|
-|:------:|:---|
+|:---:|:---|
 |Dispatcher Servlet| 클라이언트의 요청을 받아 컨트롤러에게 전달, 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답생성
 |Handler Mapping| 클라이언트의 요청 URL을 어떤 컨트롤러가 처리할지 결정
 |Handler Adapter| Dispatcher Servlet 처리 요청을 변환해서 컨트롤러에게 전달, 그 응답결과를 Dispatcher Servlet이 요구하는 형식으로 변환
