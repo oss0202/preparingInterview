@@ -34,7 +34,7 @@
    - 익명 클래스의 한 개의 메소드를 식으로 표현한 것
      - 익명클래스 : 이름이 없는 클래스, 한 개의 객체만을 생성할 수 있는 일회용 클래스
 2. 메소드 참조(Method Reference) : 특정 람다식을 축약한 것
-3. 스트림 API(Stream API) : 데이터를 추상화하여 다룰 수 있게 됨
+3. 스트림 API(Stream API) : 데이터의 흐름 
 4. java.time 패키지 : 더 직관적이고 개선된 Data, Time API를 제공
 5. Optional : 값을 Optional로 캡슐화하여 NullPointerException을 막음
 
