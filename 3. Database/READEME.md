@@ -44,9 +44,9 @@
   - 컬럼을 가공하거나 변형된 경우
     - ex. WHERE SUBSTR(ORDER_NO, 1,4) = ‘2021’ -> WHERE ORDER_NO LIKE ‘2021%’
   - 인덱스 컬럼의 묵시적 형변환(같은 타입으로 비교해야함)
-    - ex) WHERE REG_DATE = ‘20211224’ -> WHERE REG_DATE = TO_DATE(‘20211124’, ‘YYYYMMDD’)
+    - ex. WHERE REG_DATE = ‘20211224’ -> WHERE REG_DATE = TO_DATE(‘20211124’, ‘YYYYMMDD’)
   - 부정연산자(!=,<>)를 사용하는 경우
-    - ex) WHERE MEM_TYPE != ‘10’ -> WHERE MEM_TYPE IN(‘20’, ‘30’)
+    - ex. WHERE MEM_TYPE != ‘10’ -> WHERE MEM_TYPE IN(‘20’, ‘30’)
   - like 연산자에서 좌변에 '%'를 붙인 경우
     - 뒤에 위치(ex. like 'S%')하면 된다.
   - IS NULL 이나 IS NOT NULL을 사용한 경우
