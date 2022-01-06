@@ -64,7 +64,6 @@
 ### Checked Exception rollback 방법
 - try~catch
 - Transactional의 rollbackFor 옵션 사용
-- 컴파일 단계에서 체크
 - Spring에서는 jdbcTemplate에서 unChecked Exception으로 포장해서 리턴해줘서 rollback 된다. 
 
 ### Exception을 만들어서 사용해본적?
