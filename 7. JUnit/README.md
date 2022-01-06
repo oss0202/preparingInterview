@@ -19,7 +19,7 @@
 
 ### @Runwith 어노테이션
 JUnit 프레임워크 테스트 실행방법을 확장할 때 사용하는 어노테이션이다.
-ex. @Runwith(SpringRunner.class)는 스프링 부트와 JUnit 사이의 연결자 역할
+<br>ex. @Runwith(SpringRunner.class)는 스프링 부트와 JUnit 사이의 연결자 역할
 
 ### @WebMvcTest 어노테이션
 스프링 부트의 컨트롤러를 JUnit으로 테스트하고 싶을 경우 Http Connection을 별도로 구현하지 않아도 MVC 테스트를 가능하게 할 수 있다.
