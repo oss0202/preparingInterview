@@ -82,8 +82,28 @@ ex. @Runwith(SpringRunner.class)는 스프링 부트와 JUnit 사이의 연결�
    - andReturn()
      - return 결과를 반황할 때 쓰인다.
 
-4. Given - When- Then 패턴
+4. Given - When- Then 패턴(  준비 - 실행 - 검증 )
+- 대표적인 테스트 방식으로 행위주도개발(Behavior-Driven-Development BDD)방식의 접근법
+- Given
+  - 테스트를 위해 준비를 하는 과정
+  - 테스트에 사용되는 변수, 입력 값 등을 정의하거나 Mock 객체를 정의하는 구문도 Given에 포함
+- When
+  - 실제로 액션을 하는 테스트를 실행하는 과정
+- Then
+  - 테스트를 검증하는 과정
+  - 주로 assertThat 메서드로 When에서 얻어낸 값과 비교한다.
 
+5. AssertJ
+- 단언문(assertion)을 작성하기 위한 인터페이스를 제공하는 자바 라이브러리
+- 테스트 코드의 가독성을 향상시키고 테스트 유지관리를 더 쉽게 만드는 것이 목적
+- spring-boot-starter-test에 기본적으로 포함
+- 장점
+  - 메서드 체이닝을 지원하여 깔끔하고 읽기 쉬운 테스트 코드 작성 가능
+  - ※ junit의 assertThat은 ide에서 자동완성을 잘 지원안한다. 
+- 단점
+  - 라이브러리 의존성 설정
+    - java 8 이상은 3.x 버전
+    - java 7 이하는 2.x 버전
 
 
 
