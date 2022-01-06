@@ -41,14 +41,16 @@
   - 중복도가 높고 분포도가 낮을 경우 모든 ROW를 검색하는 table full scan이 더 나을수도 있다.
   따라서 중복도가 낮은 컬럼을 인덱스로 잡아야 한다.
 - **인덱스가 안 되는 쿼리**
-  - 컬럼을 가공
+  - 컬럼을 가공하거나 변형된 경우
     - ex. WHERE SUBSTR(ORDER_NO, 1,4) = ‘2021’ -> WHERE ORDER_NO LIKE ‘2021%’
   - 인덱스 컬럼의 묵시적 형변환(같은 타입으로 비교해야함)
     - ex) WHERE REG_DATE = ‘20211224’ -> WHERE REG_DATE = TO_DATE(‘20211124’, ‘YYYYMMDD’)
-  - 인덕스 컬럼 부정형 비교
+  - 부정연산자(!=,<>)를 사용하는 경우
     - ex) WHERE MEM_TYPE != ‘10’ -> WHERE MEM_TYPE IN(‘20’, ‘30’)
-  - %가 앞에 위치
-    - or 조건 사용 -> UNION ALL로 대체
+  - like 연산자에서 좌변에 '%'를 붙인 경우
+    - 뒤에 위치(ex. like 'S%')하면 된다.
+  - IS NULL 이나 IS NOT NULL을 사용한 경우
+    - 인덱스는 null이 없으므로 full scan을 실행한다.
 - **주의점**
   - SELECT가 자주 사용되는 테이블이라면 성능 향상의 효과를 기대할 수 있지만,
 UPDATE, DELETE, INSERT 쿼리가 자주 사용되는 테이블이라면 오히려 성능이 감소할 수 있다.
