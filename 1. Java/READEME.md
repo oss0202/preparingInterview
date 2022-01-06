@@ -73,7 +73,7 @@
   - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
   
 ### Stream 이란?
-- Java8부터 지원하며, 배열, 컬랙션 인스턴스에 함수 여러 개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다.
+- Java8부터 지원하며, 배열, 컬랙션 인스턴스에 함수 여러 개를 조합해서 필터링하여 가공된 결과를 얻을 수 있다.
 - 특징
   - 원본 데이터를 변경하지 않고 별도의 Stream을 생성
   - **내부 반복자를 사용하므로 병렬처리(multi-threading)가 가능하다.**
