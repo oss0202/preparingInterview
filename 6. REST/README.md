@@ -30,7 +30,7 @@ HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Opera
   - REST 기반으로 서비스 API를 구현한 것
 
 ### REST API 설계 규칙
-- URI는 정보의 자원을 표현해야 한다.
+- URI은 정보의 자원을 표현해야 한다.
 - 자원에 대한 행위는 HTTP Method(GET, PUT, POST, DELETE, PATCH)로 표현한다.
 - 슬래시 구분자(/)는 계층 관계를 나타내는데 사용한다.
 - URI 마지막 문자로 슬래쉬(/)를 포함하지 않는다.
