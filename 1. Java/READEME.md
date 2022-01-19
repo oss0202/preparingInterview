@@ -34,8 +34,17 @@
    - 익명 클래스의 한 개의 메소드를 식으로 표현한 것
      - 익명클래스 : 이름이 없는 클래스, 한 개의 객체만을 생성할 수 있는 일회용 클래스
 2. 메소드 참조(Method Reference) : 특정 람다식을 축약한 것
-3. 스트림 API(Stream API) : 데이터의 흐름 
+3. 스트림 API(Stream API) : 데이터의   흐름 
 4. java.time 패키지 : 더 직관적이고 개선된 Data, Time API를 제공
+   - 불변 객체가 아니다(not immutable)
+     - set으로 변경이 가능하다.
+   - int 상수필드의 남용
+   - 헷갈리는 월 지정
+     - 1월이 0
+     - Calendar.OCTOBER의  값은 9( != 10)
+   - 일관성 없는 요일 상수
+     - Calendar는 일요일이 1
+     - Date는 일요일이 0
 5. Optional : 값을 Optional로 캡슐화하여 NullPointerException을 막음
 
 ### Java Generic 이란?
