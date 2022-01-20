@@ -23,6 +23,10 @@
 또한 이것을 UTf(Unicode Transformation Format) 이라고 하며 여기에 번호를 붙인 것이 유니코드 인코딩이다.
 - UTF-8 : 하나의 문자를 1~4바이트의 가변길이로 표현. 1바이트 영역은 ASCII코드와 하위 호환되며 ASCII코드의 128개 문자 집합은 UTF-8과 동일하게 호환됨. 현재 인터넷에서 가장 많이 쓰이는 인코딩이며 뛰어난 크로스플랫폼 호환성도 갖고 있음
 
+## 네트워크 계층
+- 네트워크 계층은 ***OSI 7 Layer***와 ***TCP/IP의 4 Layer***가 있다.
+
+
 ## HTTP vs HTTPS
 ### HTTP ( Hyper Text Transfer Protocol ) 
 - 서버/클라이언트 모델을 따라 데이터를 주고 받기 위한 프로토콜
