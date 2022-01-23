@@ -13,7 +13,7 @@
 이미 만들어진 plugin을 불러와서 사용할수도 있다.
 
 ### Maven Vs Gradle
-- Maven
+- Maven 
   - POM 개념을 기반으로 프로젝트의 빌드, 보고 및 문서를 중앙 관리할 수 있다.
     - 프로젝트의 빌드 Lifecycle 기반 프레임워크
     - XML기반의 pom.xml 파일로 설정
