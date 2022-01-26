@@ -48,7 +48,7 @@
 
 |구성요소 이름|설명|
 |:---:|:---|
-|Dispatcher Servlet| 클라이언트의 요청을 받아 컨트롤러에게 전달, 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답생성
+|Dispatcher Servlet| - 클라이언트의 요청을 받아 컨트롤러에게 전달, 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답생성<br>- HTTP 프로토콜로 들어오는 모든 요청을 가장 먼저 받아 적합한 컨트롤러에 위임해주는 프론트 컨트롤러(Front Controller)이다.
 |Handler Mapping| 클라이언트의 요청 URL을 어떤 컨트롤러가 처리할지 결정
 |Handler Adapter| Dispatcher Servlet 처리 요청을 변환해서 컨트롤러에게 전달, 그 응답결과를 Dispatcher Servlet이 요구하는 형식으로 변환
 |Controller| 클라이언트의 요청을 처리한 뒤, 결과를 리턴
@@ -120,5 +120,16 @@
 - Strategy Pattern
 - Template callback Pattern
 
-
-
+## Filter, Interceptor
+### 필터(Filter)
+필터(Filter)는 디스패처 서블릿(Dispatcher Servlet)에 요청이 전달되기 전/후에 url패턴에 맞는 모든 요청에 대해 부가작업을 처리할 수 있는 기능을 제공
+![spring_filter](../img/spring_filter.img)
+**필터 메소드**
+- **init 메소드**
+  - 필터 객체를 초기화하고 서비스에 추가하기 위한 메소드
+  - 웹 컨테이너가 1회 init 메소드를 호출하여 필터 객체를 초기화하면 이후의 요청들은 doFilter를 통해 처리된다.
+- **doFilter 메소드**
+  - url-pattern에 맞는 모든 HTTP 요청이 디스패처 서블릿으로 전달되기 전에 웹 컨테이너에 의해 실행되는 메소드
+- **destroy 메소드**
+  - 필터 객체를 서비스에서 제거하고 사용하는 자원을 반환하기 위한 메소드
+  - 웹 컨테이너에 의해 1번 호출되며 이후에는 doFilter에 의해 처리되지 않는다.
