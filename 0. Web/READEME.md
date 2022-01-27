@@ -84,11 +84,22 @@
 
 ### 쿠키(Cookie)
 - **클라이언트 로컬**에 저장하는 작은 데이터 파일
+```http response
+MockHttpServletResponse:
+           Status = 200
+          Headers = [Set-Cookie:"userName=kevin", "password=abc123"]
+```
 - key = value 형태
 - 사용자에게 발급된 세션 ID를 저장
-- 사용자인증이 유효한 시간을 명시할 수 있으며, 유효시간이 정해지면 브라우저가 종료되어도 
-인증이 유지된다. 장바구니, 24시간 동안 창 띄위지 않기 등에 사용
+- 사용자인증이 유효한 시간을 명시할 수 있으며, 유효시간이 정해지면 브라우저가 종료되어도 인증이 유지된다. 장바구니, 24시간 동안 창 띄위지 않기 등에 사용
 - 쿠키는 사용자가 따로 요청하지 않아도 브라우저가 request시에 request header에 넣어서 자동으로 서버에 전송한다.
+```http request
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/my/edit
+          Headers = [Cookie:"userName=kevin"; "password=abc123"]
+```
+
 - **장점**
   - 서버의 저장공간 절약
 - **단점**
@@ -206,6 +217,3 @@ JWT는 .을 구분자로 나누어지는 세 가지 문자열의 조합이다.
 3. 토큰을 탈취당하면 대처하기 어렵다.
 4. 토큰은 한 번 발급되면 유효기간이 만료될 때 까지 계속 사용이 가능하기 때문이다.
 5. 특정 사용자의 접속을 강제로 만료하기 어렵지만, 쿠키/세션 기반 인증은 서버 쪽에서 쉽게 세션을 삭제할 수 있다.
-
-
-https://tecoble.techcourse.co.kr/post/2021-05-22-cookie-session-jwt/
