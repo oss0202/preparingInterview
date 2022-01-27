@@ -1,5 +1,5 @@
-### 객체지향이란
-- 객체 간의 상호작용을 통해 로직을 구성하는 프로그래밍 방법이다.
+## 객체지향이란
+객체 간의 상호작용을 통해 로직을 구성하는 프로그래밍 방법이다.
 
 ### 절차지향, 객체지향 프로그래밍 비교
 |구분|**절차지향**|**객체지향**|
@@ -29,6 +29,7 @@
 - **ISP(Interface Segregation Principle)** : 클라이언트는 자신이 이용하지 않는 메서드에 의존하면 안된다.
 - **DIP(Dependency Inversion Principle)** : 변화하지 않는 것에 의존하라
 
+## Java
 ### Java 8 주요변경사항
 1. 람다표현식(Lamda Expression) : 함수형 프로그래밍이 가능하게 됨
    - 익명 클래스의 한 개의 메소드를 식으로 표현한 것
@@ -79,7 +80,44 @@
 - Filter
   - Post나 Put일 때 Body가 비었을 때 발생(custom Exception)
   - Http Request Method를 올바르게 요청하지 않았을 경우 발생(HttpRequestMethodNotSupportedException)
-  
+
+### equals를 재정의한 클래스에서는 hashcode도 재정의 해야한다 그 이유는?
+- hashcode를 재정의 하지 않으면 hash를 사용하는 HashMap, HashSet과 같은 컬렉션의 원소로 사용될 때 문제가 발생할 것이다.
+
+### HashMap에서 충돌(collision)을 회피하기 위한 방법은?
+- Open Addressing
+    - 충돌이 발생하면 다른 해시버킷에 해당 자료를 삽입
+- Separate Chaining
+    - 충돌 시 해당 버킷값을 첫 부분으로 하는 링크드 리스트로 해결
+
+## JVM ( Java Virtual Machine )
+- 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애받지 않고
+  프로그램을 실행할 수 있도록 도와준다.
+- 구조
+    - Class Loader : JVM 내로 클래스 파일을 로드, 런타임 시에 동적으로 클래스를 로드
+    - Execution Engine : Class Loader를 통해 JVM 내의 Runtime Data Area에 배치된 바이트 코드들을 명령어 단위로 읽어서 실행
+    - Garbage Collector : GC는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거
+    - **Runtime Data Area** : JVM의 메모리 영역
+        1) Method area
+            - 모든 쓰레드가 공유하는 메모리 영역
+            - 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관
+        2) Heap area
+            - 모든 쓰레드가 공유하며, new 키워드로 생성된 객체와 배열이 생성되는 영역
+            - GC가 참조되지 않는 메모리를 확인하고 제거하는 영역
+        3) Stack area
+            - 메서드 호출 시 메서드 안에서 사용되는 값들을 저장하고, 호출된 메서드의 매개변수, 지역변수, 리턴 값 및 연산 시 일어나는 값들을 임시로 저장
+            - 메서드 수행이 끝나면 프레임별로 삭제
+        4) PC Register
+            - 쓰레드가 시작될 때 생성되며, 생성될 때마다 생성되는 공간으로 쓰레드마다 하나씩 존재
+            - 쓰레드가 어떤 부분을 무슨 명령으로 실행해야할 지에 대한 기록을 하는 부분으로 현재 수행중인 JVM 명령의 주소를 갖음
+        5) Native method stack
+            - 자바 외 언어로 작성된 네이티브 코드를 위한 메모리 영역
+
+### Garbage Collection의 종류
+- GC : Java Runtime시 Heap 영역에 저장되는 객체들은 따로 정리하지 않으면 OutOfMemory Exception이 발생할 수 있다.
+  이를 방지하기 위하여 JVM에서는 주기적으로 사용하지 않는 객체를 수집하여 정리하는 GC를 진행한다.
+
+## Stream
 ### Stream 이란?
 - Java8부터 지원하며, 배열, 컬랙션 인스턴스에 함수 여러 개를 조합해서 필터링하여 가공된 결과를 얻을 수 있다.
 - 특징
@@ -113,39 +151,4 @@
   - 통계 : count(), min(), max()
   - 연산 : sum(), average()
   - 수집 : collect()
-
-### equals를 재정의한 클래스에서는 hashcode도 재정의 해야한다 그 이유는?
-- hashcode를 재정의 하지 않으면 hash를 사용하는 HashMap, HashSet과 같은 컬렉션의 원소로 사용될 때 문제가 발생할 것이다.
-
-### HashMap에서 충돌(collision)을 회피하기 위한 방법은?
-- Open Addressing
-  - 충돌이 발생하면 다른 해시버킷에 해당 자료를 삽입
-- Separate Chaining
-  - 충돌 시 해당 버킷값을 첫 부분으로 하는 링크드 리스트로 해결
-  
-### Garbage Collection의 종류
-- GC : Java Runtime시 Heap 영역에 저장되는 객체들은 따로 정리하지 않으면 OutOfMemory Exception이 발생할 수 있다.
-이를 방지하기 위하여 JVM에서는 주기적으로 사용하지 않는 객체를 수집하여 정리하는 GC를 진행한다.
-
-### JVM ( Java Virtual Machine )
-- 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애받지 않고
- 프로그램을 실행할 수 있도록 도와준다.
-- 구조
-  - Class Loader : JVM 내로 클래스 파일을 로드, 런타임 시에 동적으로 클래스를 로드
-  - Execution Engine : Class Loader를 통해 JVM 내의 Runtime Data Area에 배치된 바이트 코드들을 명령어 단위로 읽어서 실행
-  - Garbage Collector : GC는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거
-  - **Runtime Data Area** : JVM의 메모리 영역
-    1) Method area
-       - 모든 쓰레드가 공유하는 메모리 영역
-       - 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관
-    2) Heap area
-       - 모든 쓰레드가 공유하며, new 키워드로 생성된 객체와 배열이 생성되는 영역
-       - GC가 참조되지 않는 메모리를 확인하고 제거하는 영역
-    3) Stack area
-       - 메서드 호출 시 메서드 안에서 사용되는 값들을 저장하고, 호출된 메서드의 매개변수, 지역변수, 리턴 값 및 연산 시 일어나는 값들을 임시로 저장
-       - 메서드 수행이 끝나면 프레임별로 삭제
-    4) PC Register
-       - 쓰레드가 시작될 때 생성되며, 생성될 때마다 생성되는 공간으로 쓰레드마다 하나씩 존재
-       - 쓰레드가 어떤 부분을 무슨 명령으로 실행해야할 지에 대한 기록을 하는 부분으로 현재 수행중인 JVM 명령의 주소를 갖음
-    5) Native method stack
-       - 자바 외 언어로 작성된 네이티브 코드를 위한 메모리 영역
+    
