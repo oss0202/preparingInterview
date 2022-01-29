@@ -99,7 +99,7 @@ MockHttpServletRequest:
       Request URI = /user/my/edit
           Headers = [Cookie:"userName=kevin"; "password=abc123"]
 ```
-
+ 
 - **장점**
   - 서버의 저장공간 절약
 - **단점**
