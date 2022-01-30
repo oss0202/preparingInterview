@@ -97,13 +97,13 @@
     - Execution Engine : Class Loader를 통해 JVM 내의 Runtime Data Area에 배치된 바이트 코드들을 명령어 단위로 읽어서 실행
     - Garbage Collector : GC는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거
     - **Runtime Data Area** : JVM의 메모리 영역
-        1) Method area
+        1) **Method area**
             - 모든 쓰레드가 공유하는 메모리 영역
             - 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관
-        2) Heap area
+        2) **Heap area**
             - 모든 쓰레드가 공유하며, new 키워드로 생성된 객체와 배열이 생성되는 영역
             - GC가 참조되지 않는 메모리를 확인하고 제거하는 영역
-        3) Stack area
+        3) **Stack area**
             - 메서드 호출 시 메서드 안에서 사용되는 값들을 저장하고, 호출된 메서드의 매개변수, 지역변수, 리턴 값 및 연산 시 일어나는 값들을 임시로 저장
             - 메서드 수행이 끝나면 프레임별로 삭제
         4) PC Register
