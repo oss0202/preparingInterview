@@ -90,6 +90,46 @@
 - Separate Chaining
     - 충돌 시 해당 버킷값을 첫 부분으로 하는 링크드 리스트로 해결
 
+### try-with-resource 를 사용해야 하는 이유
+**try()** 에 자원 객체를 선언해 사용하면, try 블록이 끝날 때 해당 자원을 자동으로 종료(**close()**)해준다.
+단, 선언된 자원은 ***AutoCloseable 인터페이스***가 구현된 객체여야 한다.
+
+입출력 관련 메소드는 IOException 예외를 throws하는데 이 IOException 예외가 Checked Exception이기 때문에 예외를 try~catch로 
+적절히 처리해주거나 throws를 이용해 예외 처리의 책임을 호출하는 쪽으로 처리를 해줘야한다.
+```java
+public void write(String fileName, String word) throws IOException {
+        Writer writer = new FileWriter(fileName);
+        writer.write(word);
+    }
+```
+하지만 이렇게 처리할 경우 FileWriter 스트림이 정상적으로 생성된 후 write(word) 메소드를 실행하다가 예외가 발생할 경우 해당 예외가
+ 정상적으로 throws 되겠지만, 스트림은 소멸하지 못하고 남겨진 채 메소드가 종료된다.
+
+스트림이 메모리에 남아있을 경우 값 유실 문제가 발생할수도 있으므로 스트림을 메모리에서 소멸시켜주는 스트림을 닫는 과정이 필요하다.
+```java
+public void write(String fileName, String word) throws IOException {
+Writer writer = new FileWriter(fileName);
+writer.write(word);
+writer.close();
+}
+```
+하지만 이렇게 할 경우 write메소드를 실행 도중에 예외가 발생할 경우엔 close메소드가 실행되지 않기 때문에 
+Java6까지는 다음과 같은 방법으로 입출력 스트림을 다루었다. 
+```java
+public void write(String fileName,String word) throws IOException{
+	try{
+		Writer writer = new FileWriter(fileName);
+		writer.write(word);
+	}
+	finilly{
+		writer.close();
+	}
+}
+```
+이렇게 try~finally로 입출력 작업 코드를 묶어주면 
+
+https://velog.io/@adduci/Java-try-with-resource-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
+
 ## JVM ( Java Virtual Machine )
 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애받지 않고 프로그램을 실행할 수 있도록 도와준다.
 - 구조
