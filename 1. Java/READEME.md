@@ -126,9 +126,17 @@ public void write(String fileName,String word) throws IOException{
 	}
 }
 ```
-이렇게 try~finally로 입출력 작업 코드를 묶어주면 
-
-https://velog.io/@adduci/Java-try-with-resource-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
+스트림을 닫는 과정에서 예외가 발생할 경우 try 블록에서 발생한 예외가 아니라 finally 블록에서 발생한 예외가 던져진다.
+그래서 java 7 부터는 try ~ with ~ resource 라는 문법이 추가되었다.
+```java
+public void write(String fileName,String word) throws IOException{
+	try(Writer writer = new FileWriter(fileName)){
+		writer.write(word);
+	}
+}
+```
+try 뒤에 오는 괄호안에 try 블록에서 사용할 스트림(리소스)를 생성해주기만 하면 try블록에서 예외가 발생하든 발생하지 않든간에
+생성한 리소스를 자동으로 close 해준다.(close 과정에서 발생한 예외도 받을 수 있다.)
 
 ## JVM ( Java Virtual Machine )
 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애받지 않고 프로그램을 실행할 수 있도록 도와준다.
