@@ -66,3 +66,37 @@ UPDATE, DELETE, INSERT 쿼리가 자주 사용되는 테이블이라면 오히�
   - 내부적으로 중복을 체크하는 로직이 작동되는데 데이터가 많을 경우 부하가 발생한다.
 - UNION ALL
   - 두 쿼리의 결과에서 중복되는 값을 모두 보여준다.
+
+
+## Merge Into
+하나의 테이블 혹은 두 개의 테이블을 비교 후 조건에 맞으면 UPDATE OR UPDATE 후 DELETE를 수행하게 되고 (조건에 사용한 컬럼은 UPDATE 불가능) 조건에 맞지 않으면 INSERT를 수행하게 된다
+
+테이블에 데이터가 이미 있으면 업데이트를 실행하고, 없을경우 값을 넣어줘야 하는 경우에 MERGE INTO 구문을 사용하지 않는다면,
+```text
+1. 값이 있는지 확인
+2. 있으면 UPDATE
+3. 없으면 INSERT
+```
+이렇게 3개를 선언을 해줘야 한다.
+
+- **문법( Oracle 기준)**
+```oracle
+MERGE INTO [TABLE / VIEW] - update 또는 insert할 테이블 혹은 뷰
+    USING [TABLE / VIEW / DUAL] - 비교할 대상 테이블 혹은 뷰 (위 테이블과 동일할 경우 DUAL을 사용)
+    ON [조건] - UPDATE 와 INSERT 처리할 조건문 (조건이 일치하면 UPDATE / 불일치 시 INSERT)
+              WHEN MATCHED THEN
+UPDATE SET
+  [COLUMN1] = [VALUE1],
+  [COLUMN2] = [VALUE2],
+  ...
+  (DELETE [TABLE] WHERE [COLUMN 1] = [VALUE 1] AND ...) - UPDATE 뿐만 아니라 DELETE 구문도 사용 가능
+  WHEN NOT MATCHED THEN
+INSERT (COLUMN1, COLUMN2, ...)
+  VALUES (VALUE1, VALUE2, ...)
+```
+- 주의사항
+  - 오라클 9i 버전 이상부터 사용이 가능하다.
+  - ON 조건절에 사용된 컬럼은 UPDATE가 불가능하다.
+    - 되도록이면 PK로 비교해야한다.
+  - 오라클 10g 버전 이상부터 DELETE구문 사용이 가능하다.
+  - 
