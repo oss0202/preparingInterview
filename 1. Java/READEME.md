@@ -148,6 +148,19 @@ public void write(String fileName,String word) throws IOException{
 try 뒤에 오는 괄호안에 try 블록에서 사용할 스트림(리소스)를 생성해주기만 하면 try블록에서 예외가 발생하든 발생하지 않든간에
 생성한 리소스를 자동으로 close 해준다.(close 과정에서 발생한 예외도 받을 수 있다.)
 
+### Comparable vs Comparator 차이
+- 목적 : 객체를 비교할 수 있도록 만든다.
+    - primitive type의 실수 변수(int, double 등)의 경우 부등호를 통해서 비교할 수 있다.
+- 둘 다 인터페이스이다.
+  - 인터페이스 내에 있는 메소드를 반드시 구현해야 한다.
+- **비교 대상이 다르다.**
+1) Comparable
+   - **compareTo(T o)**
+   - 자기 자신과 매개변수 객체를 비교
+2) Comparator
+   - **compare(T o1, T o2)**
+   - 두 매개변수 객체를 비교
+
 ## JVM ( Java Virtual Machine )
 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애받지 않고 프로그램을 실행할 수 있도록 도와준다.
 - 구조
