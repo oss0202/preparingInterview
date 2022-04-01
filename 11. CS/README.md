@@ -6,3 +6,6 @@
   - 어플리케이션 하나가 Process이고, 그 안에서의 분기 처리가 Thread이다.
 - Context Switching 시, Context Switching 을 수행하는 CPU는 Cache 를 초기화하고 Memory Mapping 을 초기화하는 작업을 거치는 등 아무 작업도 하지 못하므로 잦은 Context Switching은 성능 저하(오버헤드)를 가져온다.
 
+### Java Thread
+- 운영체제의 역할을 JVM(Java Virtual Machine)이 대신합니다.
+- 자바에는 Thread만 존재하기 때문에 JVM에 의해 스케줄링되는 실행 단위 코드블록 입니다.
