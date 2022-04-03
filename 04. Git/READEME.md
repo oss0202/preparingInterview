@@ -53,6 +53,11 @@
   - branch의 base를 옮김
   - 커밋트리를 깔끔하게 정리해서 보기가 좋다.
 
+## 자주사용하는 명령어
+- ```git init``` 새 git 저장소 생성
+- ```git add .``` staging area에 모든파일 추가
+- ```git commit -m ``` staging area에 모든파일 추가
+
 ### Git reset, revert
 - Reset
   - 특정시점으로 되돌린다.
