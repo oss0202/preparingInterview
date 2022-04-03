@@ -79,7 +79,38 @@
 ### add 취소하기
 - Staging Area(git add 명령 후의 상태)에 넣은 파일을 빼고 싶을 때가 있다.
 ```shell
+// 모든 파일 Staging Area에 추가
+  git add .
 
+// 파일들의 상태를 확인
+  git status
+  
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   04. Git/READEME.md
 ```
+이때 git ```restore``` 명령어를 통해 git add를 취소할 수 있다.
+- git version 2.23부터 ```git reset #filename#```명령어와 동일한 기능을 하는 ```git restore --staged #filename#```이 새로 생겼습니다.
+```shell
+// restore를 사용하여 git add 전부 취소하기
+  git restore --staged . 
 
+// 파일들의 상태를 확인
+  git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   04. Git/READEME.md
+
+no changes added to commit (use "git add" and/or "git commit -a")  
+```
 
