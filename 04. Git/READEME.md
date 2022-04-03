@@ -150,3 +150,14 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 2. 원격 저장소에 강제로 push
    1) ```git push -f``` : 원격 저장소에 강제로 push한다(-force 옵션 : 강제)
+
+## Git Stash
+워킹 디렉토리에 ```Unstaged - git add는 수행됨```파일들을 백업하고 워킹 디렉토리를 ```HEAD - 이전 커밋```상태로 만드는 명령이다.
+### 자주 사용하는 명령어
+- ```git stash``` : 현재 수정중인 상태에서 이전 HEAD의 커밋 상태로 돌아감
+- ```git stash pop``` : Stash로 임시 저장했던 상태로 되돌린다. 저장된 스택중에 가장 위에 있는것 최신에 push된 상태로 돌아간다.
+- ```git stash list``` : 현재 Stash(임시보관)되어진 리스트를 보여줌
+- ```git stash save #NAME#``` : 해당 이름으로 git stash를 수행
+- ```git stash apply stash@{number}``` : 해당 이름으로 상태를 돌릴 수 있다.(stash에 저장한 내역은 남아있다.)
+- ```git stash drop stash@{number}``` : 저장된 Stash중 해당 이름으로 되어 있는 것을 삭제한다. 생략하면 맨위에 Push 된 것을 삭제한다.
+- ```git stash clear``` : 모든 Stash 리스트를 삭제한다.
