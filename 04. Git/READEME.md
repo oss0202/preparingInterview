@@ -54,9 +54,18 @@
   - 커밋트리를 깔끔하게 정리해서 보기가 좋다.
 
 ## 자주사용하는 명령어
-- ```git init``` 새 git 저장소 생성
-- ```git add .``` staging area에 모든파일 추가
-- ```git commit -m ``` staging area에 모든파일 추가
+- ```git init``` : 새 git 저장소 생성
+- ```git add .``` : staging area에 모든파일 추가
+- ```git commit -m "커밋 메세지"``` : local repository에 변경 사항 추가
+- ```git push ``` : local repository에 변경 사항을 remote repository에 푸시
+- ```git pull ``` : remote repository에 local repository로 코드 가져오기
+- ```git brach ``` : 현재 branch 확인
+- ```git brach -r ``` : remote branch 확인
+- ```git checkout -b 브랜치명 ``` : branch 생성 후 해당 branch로 전환
+- ```git log ``` : 최근 커밋 내역 표시
+- ```git log -p ``` : 최근 커밋 내역 자세히 표시
+- ```git status ``` : 추적 죽인 파일과 추적되지 않은 파일 표시
+- ```git stash ``` : 현재 작업중인 내역(add or commit) 임시 보관하기
 
 ### Git reset, revert
 - Reset
