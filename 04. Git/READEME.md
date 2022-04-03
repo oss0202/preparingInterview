@@ -133,3 +133,20 @@ no changes added to commit (use "git add" and/or "git commit -a")
   - mixed : index 취소(**add하기 전 상태, unstaged 상태**), 워킹 디렛터리의 파일 보존(기본옵션)
   - **hard** : index 취소(**add하기 전 상태, unstaged 상태**), 워킹디렛터리의 파일 삭제, **모두 취소**
 
+### push 취소하기
+- 이 명령을 사용하면 자신의 local의 내용을 remote에 강제로 덮어쓰기를 하는 것이기 때문에 주의해야 한다.
+  - 되돌아간 commit 이후의 모든 commmit 정보가 사라지기 때문에 주의해야 한다.
+  - 특히, 협업 프로젝트에서는 동기화 문제가 발생할 수 있으므로 팀원과 상의 후 진행하는 것이 좋다.
+
+1. 워킹 디렉터리에서 commit 되돌리기
+   1) 가장 최근의 commit을 취소하고 워킹 디렉터리를 되돌린다.
+      - ```git reset HEAD^``` : 기본옵션 : --mixed
+
+   2) 원하는 시점을 워킹 디렉터리를 되돌린다.
+      - 목록 확인
+        - ``` git reflog 또는 git log ```
+      - 원하는 시점으로 워킹 디렉터리 되돌린다.
+        - ``` git reset HEAD@{number} 또는 git reset #commit id#```
+
+2. 원격 저장소에 강제로 push
+   1) ```git push -f``` : 원격 저장소에 강제로 push한다(-force 옵션 : 강제)
