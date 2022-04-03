@@ -1,6 +1,11 @@
 ## Git
 분산 버전 관리 시스템(VCS)로, 프로젝트 파일의 변경 사항을 추적하는 시스템이다.
 ![git_staging_repository](../img/git_staging_repository.png)
+- Staging Area(index)
+  - git이 파일에서 발생하는 변경 사항을 추적하고 저장하기 시작할 때 입니다.
+  - Staging Area에 파일 추가방법
+    - ``` git add #filename#``` : 파일단위 추가
+    - ``` git add . ``` : 모든 파일을 의미하는 와일드 카드
 
 
 ### Git의 장점
