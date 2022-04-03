@@ -59,6 +59,7 @@
 - ```git init``` : 새 git 저장소 생성
 - ```git add .``` : staging area에 모든파일 추가
 - ```git commit -m "커밋 메세지"``` : local repository에 변경 사항 추가
+- ```git commit --amend``` : commit 메세지 수정하기
 - ```git push ``` : local repository에 변경 사항을 remote repository에 푸시
 - ```git pull ``` : remote repository에 local repository로 코드 가져오기
 - ```git brach ``` : 현재 branch 확인
